@@ -51,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: InputDecoration(hintText: "Enter the board size"),
               keyboardType: TextInputType.number,
               onChanged: (boardSize) {
+                // convert the text input to integer
                 int num = int.parse(boardSize);
                 setState(() {
                   N = num;
@@ -61,7 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("Calculate Number of Solutions"),
               onPressed: () {
                 nQueens.enumerate(N);
-
                 setState(() {
                   _counter = nQueens.solutionCount;
                 });
